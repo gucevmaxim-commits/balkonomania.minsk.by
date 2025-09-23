@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /search/
+Disallow: /?s=
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /my-account/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /cgi-bin/
+
+Crawl-delay: 5
+
+Sitemap: https://balkonomania.minsk.by/sitemap.xml
+Sitemap: https://balkonomania.minsk.by/sitemap-index.xml
