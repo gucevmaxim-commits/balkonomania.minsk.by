@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея работ - Balkonchik-Minsk</title>
+    <meta name="description" content="Галерея выполненных работ по остеклению и отделке балконов в Минске">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-img">
+                <img src="images/logo-balkonomania.png" alt="Balkonomania">
+            </div>
+            
+            <div class="header-center">
+                <div class="logo-text">
+                    Ремонт и отделка балконов в Минске — профессиональное преобразование вашего пространства
+                </div>
+                <div class="contact-line">
+                    <a href="tel:+375291214229">+375 29 121 42 29</a>
+                    <a href="https://instagram.com/balkonomaniya.minsk" target="_blank" class="instagram-link" rel="noopener noreferrer">
+                        Наш Instagram
+                    </a>
+                </div>
+            </div>
+            
+            <nav class="nav-desktop">
+                <a href="index.html">Главная</a>
+                <a href="index.html#services">Услуги</a>
+                <a href="gallery.html" class="highlighted">Галерея</a>
+                <a href="about.html">О нас</a>
+            </nav>
+            
+            <div class="burger-menu">☰</div>
+        </div>
+    </header>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+        <a href="index.html">Главная</a>
+        <a href="index.html#services">Услуги</a>
+        <a href="gallery.html" class="highlighted">Галерея</a>
+        <a href="about.html">О нас</a>
+    </div>
+
+    <!-- Хлебные крошки -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <a href="index.html">Главная</a> / <span>Галерея работ</span>
+        </div>
+    </section>
+
+    <!-- Галерея -->
+<section class="section gallery-page">
+    <div class="container">
+        <div class="section-title">
+            <h1>Галерея наших работ</h1>
+            <p class="section-descr">Реализованные проекты по остеклению и отделке балконов</p>
+        </div>
+
+            <!-- Контейнер для папок галереи -->
+            <div class="gallery-folders" id="galleryFolders">
+                <!-- Папки будут загружены через JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно для просмотра фотографий папки - ИСПРАВЛЕННОЕ -->
+<div class="modal-gallery" id="galleryModal">
+    <div class="modal-gallery-content">
+        <!-- Заголовок и счетчик -->
+        <div class="modal-gallery-header">
+            <h3 id="modalFolderTitle">Папка</h3>
+            <div class="modal-gallery-counter">
+                <span id="currentImage">1</span> из <span id="totalImages">0</span>
+            </div>
+        </div>
+        
+        <!-- Контейнер для изображения -->
+        <div class="modal-gallery-image-container">
+            <img class="modal-gallery-image" src="" alt="">
+        </div>
+        
+        <!-- ОТДЕЛЬНЫЕ кнопки (без общего контейнера) -->
+        <button class="modal-gallery-close">&times;</button>
+        <button class="modal-gallery-prev" aria-label="Предыдущее фото">←</button>
+        <button class="modal-gallery-next" aria-label="Следующее фото">→</button>
+    </div>
+</div>
+
+    <!-- Модальное окно для заявки -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h3 class="modal-title">Оставить заявку</h3>
+            <form class="modal-form" id="orderForm">
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон (формат: +375XXXXXXXXX)</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+375291234567">
+                    <div class="phone-error" id="phoneError">Пожалуйста, введите номер в формате +375XXXXXXXXX</div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Сообщение (необязательно)</label>
+                    <textarea id="message" name="message" placeholder="Опишите ваши пожелания или задайте вопрос"></textarea>
+                </div>
+                <button type="submit" class="modal-submit">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Плавающая кнопка -->
+    <button class="floating-btn" id="floatingOrderBtn">Заказать замер</button>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-copyright">© 2025 ООО "Магнит удачи", УНП 693150149</div>
+            <a href="#" class="back-to-top" id="backToTop">↑</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>

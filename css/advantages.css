@@ -1,0 +1,308 @@
+/* Стили для страницы преимуществ */
+
+/* Хлебные крошки */
+.breadcrumbs {
+    background: #f8f9fa;
+    padding: 15px 0;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 14px;
+}
+
+.breadcrumbs a {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    color: #007bff;
+}
+
+.breadcrumbs span {
+    color: #495057;
+    font-weight: 500;
+}
+
+/* Главный баннер преимуществ */
+.advantages-hero {
+    background: linear-gradient(135deg, #eaa166 0%, #eef109 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.advantages-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.advantages-subtitle {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Основные преимущества */
+.main-advantages {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.advantages-grid-extended {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.advantage-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.advantage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.advantage-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.advantage-card-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.advantage-card h3 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.advantage-card > p {
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.advantage-details {
+    border-top: 1px solid #e9ecef;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.advantage-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.advantage-details li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #495057;
+}
+
+.advantage-details li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Статистика */
+.advantages-stats {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.advantages-stats h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* CTA секция */
+.advantages-cta {
+    background: #2c3e50;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.advantages-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.advantages-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Анимации */
+[data-aos] {
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(30px);
+}
+
+[data-aos="fade-up"].aos-animate {
+    transform: translateY(0);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .advantages-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .advantages-subtitle {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+    
+    .advantages-grid-extended {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .advantage-card {
+        padding: 20px;
+    }
+    
+    .advantages-stats h2 {
+        font-size: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .stats-grid {
+        gap: 30px;
+    }
+    
+    .advantages-cta h2 {
+        font-size: 2rem;
+    }
+    
+    .advantages-cta p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .advantages-hero {
+        padding: 60px 0;
+    }
+    
+    .advantages-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .main-advantages {
+        padding: 50px 0;
+    }
+    
+    .advantages-stats,
+    .advantages-cta {
+        padding: 50px 0;
+    }
+}
+/* Добавьте это в конец advantages.css */
+header .logo-container {
+    gap: 8px !important;
+}
+
+header .header-center {
+    margin-left: -250px !important;
+}
+
+header .logo-text {
+    margin-bottom: 2px !important;
+    font-size: 12px !important;
+}
+/* Добавьте в конец advantages.css */
+header .logo-text {
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+}
