@@ -9,33 +9,56 @@
 </head>
 <body>
     <!-- Шапка (такая же как на главной) -->
+        <!-- Шапка (такая же как на главной) -->
     <header>
         <div class="container header-container">
-            <div class="logo-img">
-                <img src="images/logo-balkonomania.png" alt="Balkonomania">
-            </div>
-            
-            <div class="header-center">
-                <div class="logo-text">
-                    Ремонт и отделка балконов в Минске — профессиональное преобразование вашего пространства
+            <div class="logo-container">
+                <div class="logo-img">
+                    <img src="images/logo-balkonomania.png" alt="Balkonomania">
                 </div>
-                <div class="contact-line">
-                    <a href="tel:+375291214229">+375 29 121 42 29</a>
-                    <a href="https://instagram.com/balkonomaniya.minsk" target="_blank" class="instagram-link" rel="noopener noreferrer">
-                        Наш Instagram
-                    </a>
+                
+                <div class="header-center">
+                    <div class="logo-text">
+                        Ремонт и отделка балконов в Минске — профессиональное преобразование вашего пространства
+                    </div>
+                    <div class="contact-line">
+                        <a href="tel:+375291214229">+375 29 121 42 29</a>
+                        <a href="https://instagram.com/balkonomaniya.minsk" target="_blank" class="instagram-link" rel="noopener noreferrer">
+                            Наш Instagram
+                        </a>
+                    </div>
                 </div>
+                
+                <nav class="nav-desktop">
+                    <a href="index.html" class="highlighted">Главная</a>
+                    <a href="index.html#services" class="highlighted">Наши услуги</a>
+                    <a href="index.html#portfolio" class="highlighted">Наши работы</a>
+                    <a href="advantages.html" class="highlighted">Преимущества</a>
+                    <a href="about.html" class="highlighted">О нас</a>
+                </nav>
+                
+                <div class="burger-menu">☰</div>
             </div>
-            
-            <nav class="nav-desktop">
-                <a href="index.html">Главная</a>
-                <a href="index.html#services">Наши услуги</a>
-                <a href="index.html#portfolio">Наши работы</a>
-            </nav>
-            
-            <div class="burger-menu">☰</div>
         </div>
     </header>
+
+    <!-- Мобильное меню (ДОБАВЬТЕ ЭТОТ БЛОК) -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+        <a href="index.html" class="highlighted">Главная</a>
+        <a href="index.html#services" class="highlighted">Услуги</a>
+        <a href="index.html#portfolio" class="highlighted">Работы</a>
+        <a href="advantages.html" class="highlighted">Преимущества</a>
+        <a href="about.html" class="highlighted">О нас</a>
+        
+        <div class="mobile-contact-info">
+            <a href="tel:+375291214229">+375 29 121 42 29</a>
+            <a href="https://instagram.com/balkonomaniya.minsk" target="_blank" class="instagram-link" rel="noopener noreferrer">
+                Наш Instagram
+            </a>
+        </div>
+    </div>
 
     <!-- Хлебные крошки -->
     <section class="breadcrumbs">
