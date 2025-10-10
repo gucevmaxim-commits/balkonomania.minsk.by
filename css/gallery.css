@@ -2138,7 +2138,7 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #ff6600;
+    background: linear-gradient(135deg, #74d681, #057a2c);
     color: white;
     border: none;
     border-radius: 50px;
