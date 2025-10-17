@@ -5,11 +5,15 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17324344635"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-17324344635');
-    </script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+try {
+    gtag('js', new Date());
+    gtag('config', 'AW-17324344635');
+} catch(e) {
+    console.log('Google Analytics заблокирован расширением');
+}
+</script>
 
     <!-- Yandex Metrika -->
     <script type="text/javascript" >
