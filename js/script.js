@@ -222,72 +222,93 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Обработка отправки формы заявки
-    orderForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        if (isSending) return;
-        isSending = true;
-        
-        // Проверка телефона
-        if (!validatePhone(phoneInput.value)) {
-            if (phoneError) phoneError.style.display = 'block';
-            phoneInput.focus();
-            isSending = false;
-            return;
-        } else {
-            if (phoneError) phoneError.style.display = 'none';
-        }
+orderForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    if (isSending) return;
+    isSending = true;
+    
+    // === ДОБАВЛЕНО: Логирование начала отправки ===
+    console.log('=== ОТПРАВКА ФОРМЫ ===');
+    console.log('Отправка сообщения в chat_id:', CHAT_ID);
+    console.log('BOT_TOKEN:', BOT_TOKEN ? 'установлен' : 'отсутствует');
+    // === КОНЕЦ ДОБАВЛЕНИЯ ===
+    
+    // Проверка телефона
+    if (!validatePhone(phoneInput.value)) {
+        if (phoneError) phoneError.style.display = 'block';
+        phoneInput.focus();
+        isSending = false;
+        return;
+    } else {
+        if (phoneError) phoneError.style.display = 'none';
+    }
 
-        const formData = new FormData(orderForm);
-        const name = formData.get('name');
-        const phone = formData.get('phone');
-        const message = formData.get('message') || 'Не указано';
+    const formData = new FormData(orderForm);
+    const name = formData.get('name');
+    const phone = formData.get('phone');
+    const message = formData.get('message') || 'Не указано';
 
-        // Добавляем информацию о сайте в сообщение
-        const telegramMessage = `
+    // Добавляем информацию о сайте в сообщение
+    const telegramMessage = `
 <b>Новая заявка с ${SITE_NAME}</b>
 ├ Имя: <code>${name}</code>
 ├ Телефон: <code>${phone}</code>
 ├ Источник: ${SITE_URL}
 └ Сообщение: ${message}
-        `.trim();
+    `.trim();
 
-        try {
-            const submitBtn = orderForm.querySelector('.modal-submit');
-            const originalText = submitBtn.textContent;
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span class="loader"></span> Отправка...';
+    // === ДОБАВЛЕНО: Логирование данных перед отправкой ===
+    console.log('=== ДАННЫЕ ДЛЯ ОТПРАВКИ ===');
+    console.log('Chat ID:', CHAT_ID);
+    console.log('Текст сообщения:', telegramMessage);
+    console.log('URL запроса:', `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`);
+    // === КОНЕЦ ДОБАВЛЕНИЯ ===
 
-            const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    chat_id: CHAT_ID,
-                    text: telegramMessage,
-                    parse_mode: 'HTML'
-                })
-            });
+    try {
+        const submitBtn = orderForm.querySelector('.modal-submit');
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="loader"></span> Отправка...';
 
-            const result = await response.json();
+        const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                chat_id: CHAT_ID,
+                text: telegramMessage,
+                parse_mode: 'HTML'
+            })
+        });
 
-           if (response.ok) {
-                alert('✅ Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
-                orderForm.reset();
-                if (modalOverlay) modalOverlay.classList.remove('active');
-            } else {
-                throw new Error(result.description || 'Unknown Telegram API error');
-            }
-        } catch (error) {
-            console.error('Ошибка отправки в Telegram:', error);
-            alert(`❌ Ошибка отправки: ${error.message}. Позвоните нам напрямую: +375 29 121 42 29`);
-        } finally {
-            const submitBtn = orderForm.querySelector('.modal-submit');
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Отправить заявку';
-            document.body.style.overflow = '';
-            isSending = false;
+        const result = await response.json();
+
+        // === ДОБАВЛЕНО: Логирование ответа от Telegram ===
+        console.log('=== ОТВЕТ ОТ TELEGRAM ===');
+        console.log('Статус ответа:', response.status);
+        console.log('Полный ответ:', result);
+        // === КОНЕЦ ДОБАВЛЕНИЯ ===
+
+        if (response.ok) {
+            console.log('✅ Сообщение успешно отправлено в Telegram');
+            alert('✅ Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
+            orderForm.reset();
+            if (modalOverlay) modalOverlay.classList.remove('active');
+        } else {
+            console.error('❌ Ошибка Telegram API:', result.description);
+            throw new Error(result.description || 'Unknown Telegram API error');
         }
-    });
+    } catch (error) {
+        console.error('💥 Ошибка отправки в Telegram:', error);
+        alert(`❌ Ошибка отправки: ${error.message}. Позвоните нам напрямую: +375 29 121 42 29`);
+    } finally {
+        const submitBtn = orderForm.querySelector('.modal-submit');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Отправить заявку';
+        document.body.style.overflow = '';
+        isSending = false;
+    }
+});
 
     // Закрытие по ESC
     document.addEventListener('keydown', (e) => {
