@@ -365,3 +365,51 @@ function openGalleryModal() {
     modal.classList.add('show');
     document.body.style.overflow = 'hidden';
 }
+// === ДОБАВЬТЕ ЭТОТ КОД В КОНЕЦ ФАЙЛА ===
+
+// Функция проверки куда уходят сообщения
+window.checkTelegramDestination = async function() {
+    console.log('🔍 Проверяем настройки Telegram бота...');
+    
+    try {
+        // Проверяем информацию о чате
+        const response = await fetch('https://api.telegram.org/bot8014339535:AAGukPo1NltwqHMFOxpNhoPTlc0nLobSceo/getChat', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({chat_id: '7862302324'})
+        });
+        
+        const chatData = await response.json();
+        console.log('=== ИНФОРМАЦИЯ О ЧАТЕ ===');
+        
+        if (chatData.ok) {
+            console.log('✅ Чат найден!');
+            console.log('Тип чата:', chatData.result.type);
+            console.log('Название:', chatData.result.title || chatData.result.first_name || 'Без названия');
+            console.log('Username:', chatData.result.username || 'Отсутствует');
+            console.log('ID чата:', chatData.result.id);
+            
+            if (chatData.result.type === 'private') {
+                console.log('💡 Сообщения уходят в ЛИЧНЫЕ сообщения с ботом');
+                console.log('💡 Зайдите в чат с @BalkonomaniaMinskBot');
+            } else if (chatData.result.type === 'group') {
+                console.log('💡 Сообщения уходят в ГРУППУ:', chatData.result.title);
+            } else if (chatData.result.type === 'channel') {
+                console.log('💡 Сообщения уходят в КАНАЛ:', chatData.result.title);
+            }
+        } else {
+            console.error('❌ Ошибка:', chatData.description);
+        }
+        
+    } catch (error) {
+        console.error('💥 Ошибка проверки:', error);
+    }
+}
+
+// Автоматически запускаем проверку при загрузке
+document.addEventListener('DOMContentLoaded', function() {
+    // Запускаем проверку через 2 секунды после загрузки
+    setTimeout(() => {
+        window.checkTelegramDestination();
+    }, 2000);
+});
