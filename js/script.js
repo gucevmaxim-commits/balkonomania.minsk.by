@@ -413,3 +413,42 @@ document.addEventListener('DOMContentLoaded', function() {
         window.checkTelegramDestination();
     }, 2000);
 });
+// Проверка может ли бот писать вам
+window.checkBotPermissions = async function() {
+    console.log('🔍 Проверяем настройки приватности...');
+    
+    try {
+        // Пробуем отправить тестовое сообщение
+        const testMsg = {
+            chat_id: '7862302324',
+            text: '🔔 ТЕСТ: Если видите это, бот может писать вам! Время: ' + new Date().toLocaleTimeString()
+        };
+        
+        const response = await fetch('https://api.telegram.org/bot8014339535:AAGukPo1NltwqHMFOxpNhoPTlc0nLobSceo/sendMessage', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(testMsg)
+        });
+        
+        const result = await response.json();
+        console.log('Результат теста:', result);
+        
+        if (result.ok) {
+            console.log('✅ Бот может отправлять вам сообщения');
+            console.log('💡 Проверьте:');
+            console.log('1. Открыт ли чат с @BalkonomaniaMinskBot');
+            console.log('2. Не архивирован ли чат');
+            console.log('3. Не заблокирован ли бот');
+        } else {
+            console.log('❌ Проблема:', result.description);
+        }
+        
+    } catch (error) {
+        console.error('Ошибка:', error);
+    }
+}
+
+// Запустите проверку
+setTimeout(() => {
+    checkBotPermissions();
+}, 2000);
