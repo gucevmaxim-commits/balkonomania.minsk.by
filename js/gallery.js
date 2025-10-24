@@ -263,7 +263,7 @@ const galleryConfig = {
         },
          {
             id: 'balcony-7',
-            title: 'Лоджия по адресу: улица Теслы 28',
+            title: 'Лоджия по адресу: Ангарская улица, 20',
             description: 'Замер и монтаж шкафчика до потолка из ЛДСП',
             previews: [
                 'images/gallery/balcony-7/1.jpg',
