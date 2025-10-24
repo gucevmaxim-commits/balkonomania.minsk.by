@@ -264,7 +264,7 @@ const galleryConfig = {
          {
             id: 'balcony-7',
             title: 'Лоджия по адресу: Ангарская улица, 20',
-            description: 'Замер и монтаж шкафчика до потолка из ЛДСП',
+            description: 'Комплексная отделка балкона «под ключ» с укладкой ламината и изготовлением мебели.',
             previews: [
                 'images/gallery/balcony-7/1.jpg',
                 'images/gallery/balcony-7/2.jpg'
