@@ -2,6 +2,33 @@
 const galleryConfig = {
     folders: [
         {
+            id: 'balcony-9',
+            title: 'Лоджия по адресу: улица Шишкина 3',
+            description: 'Отделка лоджии панелями ПВХ и монтажом мебели',
+            previews: [
+                'images/gallery/balcony-9/1.jpg',
+                'images/gallery/balcony-9/2.jpg'
+            ],
+            media: [
+                {
+                    type: 'image',
+                    url: 'images/gallery/balcony-9/1.jpg',
+                    title: 'Общий вид балкона'
+                },
+                {
+                    type: 'image', 
+                    url: 'images/gallery/balcony-9/2.jpg',
+                    title: 'Система хранения'
+                },
+                {
+                    type: 'image',
+                    url: 'images/gallery/balcony-9/3.jpg',
+                    title: 'Детали отделки'
+                }
+            ],
+            date: '15.12.2024'
+        },
+        {
             id: 'balcony-1',
             title: 'Лоджия по адресу: улица Гризодубовой 1"',
             description: 'Полная отделка лоджии с утеплением и монтажом мебели',
