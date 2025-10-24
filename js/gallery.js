@@ -260,7 +260,7 @@ const galleryConfig = {
                 
             ],
             date: '15.12.2024'
-        },,
+        },
          {
             id: 'balcony-7',
             title: 'Лоджия по адресу: улица Теслы 28',
