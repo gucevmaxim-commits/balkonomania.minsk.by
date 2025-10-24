@@ -347,7 +347,7 @@ const galleryConfig = {
                     type: 'video',
                     url: 'images/gallery/balcony-8/4.mp4',
                     title: 'Видео-тур по балкону',
-                    poster: 'images/gallery/balcony-7/1.jpg'
+                    poster: 'images/gallery/balcony-8/1.jpg'
                 }
             ],
             date: '15.12.2024'
