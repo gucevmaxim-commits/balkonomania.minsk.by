@@ -260,6 +260,64 @@ const galleryConfig = {
                 
             ],
             date: '15.12.2024'
+        },,
+         {
+            id: 'balcony-7',
+            title: 'Лоджия по адресу: улица Теслы 28',
+            description: 'Замер и монтаж шкафчика до потолка из ЛДСП',
+            previews: [
+                'images/gallery/balcony-7/1.jpg',
+                'images/gallery/balcony-7/2.jpg'
+            ],
+            media: [
+                {
+                    type: 'image',
+                    url: 'images/gallery/balcony-7/1.jpg',
+                    title: 'Общий вид балкона'
+                },
+                {
+                    type: 'image', 
+                    url: 'images/gallery/balcony-7/2.jpg',
+                    title: 'Система хранения'
+                },,
+                {
+                    type: 'image', 
+                    url: 'images/gallery/balcony-7/3.jpg',
+                    title: 'Система хранения'
+                },,
+                {
+                    type: 'image', 
+                    url: 'images/gallery/balcony-7/4.jpg',
+                    title: 'Система хранения'
+                },,
+                {
+                    type: 'image', 
+                    url: 'images/gallery/balcony-7/5.jpg',
+                    title: 'Система хранения'
+                },,
+                {
+                    type: 'image', 
+                    url: 'images/gallery/balcony-7/6.jpg',
+                    title: 'Система хранения'
+                },,
+                {
+                    type: 'image', 
+                    url: 'images/gallery/balcony-7/7.jpg',
+                    title: 'Система хранения'
+                },,
+                {
+                    type: 'image', 
+                    url: 'images/gallery/balcony-7/8.jpg',
+                    title: 'Система хранения'
+                },
+                {
+                    type: 'video',
+                    url: 'images/gallery/balcony-7/9.mp4',
+                    title: 'Видео-тур по балкону',
+                    poster: 'images/gallery/balcony-4/1.jpg'
+                }
+            ],
+            date: '15.12.2024'
         },
         {
             id: 'balcony-8',
