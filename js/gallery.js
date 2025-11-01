@@ -2,6 +2,87 @@
 const galleryConfig = {
     folders: [
         {
+            id: 'balcony-11',
+            title: 'Сенница Васильковая 9',
+            description: 'Полная отделка лоджии с утеплением ',
+            previews: [
+                'images/gallery/balcony-11/1.jpg',
+                'images/gallery/balcony-11/2.jpg'
+            ],
+            media: [
+                {
+                    type: 'image',
+                    url: 'images/gallery/balcony-11/1.jpg',
+                    title: 'Общий вид балкона'
+                },
+                {
+                    type: 'image', 
+                    url: 'images/gallery/balcony-11/2.jpg',
+                    title: 'Система хранения'
+                },
+                {
+                    type: 'image', 
+                    url: 'images/gallery/balcony-11/3.jpg',
+                    title: 'Система хранения'
+                },
+                {
+                    type: 'image', 
+                    url: 'images/gallery/balcony-11/4.jpg',
+                    title: 'Система хранения'
+                },
+                {
+                    type: 'image', 
+                    url: 'images/gallery/balcony-11/5.jpg',
+                    title: 'Система хранения'
+                },
+                {
+                    type: 'video',
+                    url: 'images/gallery/balcony-11/6.mp4',
+                    title: 'Видео-тур по балкону',
+                    poster: 'images/gallery/balcony-11/1.jpg'
+                }
+            ],
+            date: '15.12.2024'
+        },
+        {
+            id: 'balcony-10',
+            title: 'Боровляны , Первомайская 50',
+            description: 'Полная отделка лоджии с утеплением',
+            previews: [
+                'images/gallery/balcony-10/1.jpg',
+                'images/gallery/balcony-10/2.jpg'
+            ],
+            media: [
+                {
+                    type: 'image',
+                    url: 'images/gallery/balcony-10/1.jpg',
+                    title: 'Общий вид балкона'
+                },
+                {
+                    type: 'image', 
+                    url: 'images/gallery/balcony-10/2.jpg',
+                    title: 'Система хранения'
+                },
+                {
+                    type: 'image', 
+                    url: 'images/gallery/balcony-10/3.jpg',
+                    title: 'Система хранения'
+                },
+                {
+                    type: 'image', 
+                    url: 'images/gallery/balcony-10/4.jpg',
+                    title: 'Система хранения'
+                },
+                {
+                    type: 'video',
+                    url: 'images/gallery/balcony-10/5.mp4',
+                    title: 'Видео-тур по балкону',
+                    poster: 'images/gallery/balcony-10/1.jpg'
+                }
+            ],
+            date: '15.12.2024'
+        },
+        {
             id: 'balcony-9',
             title: 'Лоджия по адресу: улица Шишкина 3',
             description: 'Отделка лоджии панелями ПВХ и монтажом мебели',
